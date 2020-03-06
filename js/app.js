@@ -61,6 +61,13 @@ const checkPasswordMatch = (pass1, pass2) => {
   }
 }
 
+// Check passwords match
+function checkPasswordsMatch(input1, input2) {
+  if (input1.value !== input2.value) {
+    showError(input2, `Password do not match`)
+  }
+}
+
 
 // EventListener
 form.addEventListener('submit', function(e){
@@ -70,5 +77,5 @@ form.addEventListener('submit', function(e){
   checkLength(username, 6, 15);
   checkLength(password, 6, 10);
   checkEmail(email); 
-  checkPasswordMatch(password, password2);
+  checkPasswordsMatch(password, password2);
 }) 
